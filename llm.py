@@ -1,4 +1,3 @@
-import os
 from langchain_huggingface import HuggingFaceEndpoint
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
