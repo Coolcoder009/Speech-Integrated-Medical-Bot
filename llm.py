@@ -15,7 +15,7 @@ def load_llm(HUGGINGFACE_REPO_ID):
     llm = HuggingFaceEndpoint(
         repo_id=HUGGINGFACE_REPO_ID,
         task="text-generation",  # Add this line
-        temperature=0.5,
+        temperature=0.7,
         model_kwargs={
             "token": HF_TOKEN,
             "max_length": 512  # Remove quotes around 512 (should be an integer)
