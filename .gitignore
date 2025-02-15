@@ -1,0 +1,5 @@
+Data/
+vectorstores/
+venv/
+.env
+.idea/
