@@ -1,0 +1,145 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Full-screen background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Chat container */
+.chat-container {
+  background: #fff;
+  width: 100%;
+  max-width: 1200px; /* increased from 500px */
+  height: 90vh;     /* increased from 80vh */
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  overflow: hidden;
+  position: relative; /* Add this so the spinner is positioned relative to this container */
+}
+
+/* Chat window */
+.chat-window {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* spacing between messages */
+}
+
+/* Input container */
+.input-container {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  background-color: #fff;
+}
+
+/* Input field */
+#user-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  font-size: 16px;
+}
+
+/* Buttons */
+#mic-button, #send-button {
+  margin-left: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  outline: none;
+}
+
+#mic-button {
+  color: #888;
+}
+
+#send-button {
+  color: #4CAF50;
+}
+
+/* Chat bubbles */
+.message {
+  display: inline-block;  /* shrink to fit content */
+  max-width: 70%;         /* limits bubble width for longer messages */
+  padding: 10px 15px;
+  border-radius: 15px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* User messages */
+.message.user {
+  background-color: #dcf8c6;
+  align-self: flex-end;   /* positions bubble to the right */
+  border-bottom-right-radius: 0;
+}
+
+/* Bot messages */
+.message.bot {
+  background-color: #fff;
+  align-self: flex-start; /* positions bubble to the left */
+  border-bottom-left-radius: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Speech bubble pointers */
+.message.user::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  border: 10px solid transparent;
+  border-top-color: #dcf8c6;
+  border-bottom: 0;
+  border-right: 0;
+}
+
+.message.bot::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  bottom: 0;
+  border: 10px solid transparent;
+  border-top-color: #fff;
+  border-bottom: 0;
+  border-left: 0;
+}
+
+/* Spinner styling */
+.spinner {
+  position: absolute; /* Position the spinner relative to the chat container */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #333;
+  display: inline-block;
+  z-index: 10;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

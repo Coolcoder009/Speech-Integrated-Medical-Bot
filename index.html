@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medical Chatbot</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome for icons -->
+  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="chat-container">
+    <div id="chat-window" class="chat-window"></div>
+    <!-- Spinner for loading indicator -->
+    <div id="spinner" class="spinner" style="display:none;">
+      <i class="fas fa-spinner"></i>
+    </div>
+    <div class="input-container">
+      <input type="text" id="user-input" placeholder="Type your message here...">
+      <!-- Mic button toggles recording/stop -->
+      <button id="mic-button" title="Record">
+        <i class="fa fa-microphone"></i>
+      </button>
+      <button id="send-button" title="Send">
+        <i class="fa fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
